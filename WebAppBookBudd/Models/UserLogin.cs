@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
+
+namespace WebAppBookBudd.Models
+{
+    public partial class UserLogin
+    {
+        public int UserLoginId { get; set; }
+        public int UserId { get; set; }
+        public string PasswordHash { get; set; }
+        public bool LockedOut { get; set; }
+
+        public virtual Users User { get; set; }
+    }
+}

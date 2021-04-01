@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebAppBookBudd.Models.Users>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserFname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserMname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserLname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAdmin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVendor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserIntro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserProfile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserFname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserMname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserLname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVendor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserIntro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserProfile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

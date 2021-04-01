@@ -1,0 +1,150 @@
+﻿@model IEnumerable<WebAppBookBudd.Models.Products>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductSummery)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductDescription)
+                </th>
+
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Discount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAvailable)
+                </th>
+
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Vendor)
+                </th>
+                <th> profile pic </th>
+
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductSummery)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendor.UserEmail)
+                </td>
+                <td>
+                    <img src="@("/Images/"+item.ProductPic)" width="200" height="200" />
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+
+@*<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card " style="height:400px">
+                <img src="@("/Images/"+item.ProductPic)" height="200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"> @Html.DisplayFor(modelItem => item.ProductName)</h5>
+
+                    <h6 class="text-danger">  Price:   @Html.DisplayFor(modelItem => item.Price) Rs </h6>
+
+
+                    <p class="card-text " > <b> Product summary:</b>  @Html.DisplayFor(modelItem => item.ProductSummery)</p>
+
+                    <p>
+                        <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    }*@
+
+
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="max-width:350px;">
+            <img class="card-img-top img-thumbnail" src="@("/Images/"+item.ProductPic)" alt="Card image cap" style="max-height:250px;">
+            <div class="card-body">
+                <h5 class="card-title"> @Html.DisplayFor(modelItem => item.ProductName)</h5>
+
+                <h6 class="text-danger">  Price:   @Html.DisplayFor(modelItem => item.Price) Rs </h6>
+
+
+                <p class="card-text "> <b> Product summary:</b>  @Html.DisplayFor(modelItem => item.ProductSummery)</p>
+
+                <p>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </p>
+
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    }
+</div>
